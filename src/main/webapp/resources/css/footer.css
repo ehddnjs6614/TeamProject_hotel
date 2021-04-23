@@ -96,6 +96,7 @@ html, body {
     height: 16px;
     margin: -1px 5px 0 0;
     vertical-align: middle;
+    
 }
 .facebook span{
 	background:url(../image/facebook.jpg);
@@ -128,7 +129,7 @@ html, body {
     font-weight: 300;
 }
 .box_footer{
-	margin:20px 0 20px 0;
+	margin:20px 20px 20px 0;
 }
 .box_footer a{
 	display : inline-block;
@@ -153,11 +154,13 @@ html, body {
 	text-align:left;
 	float:right;
 	width:40%;
-	
+	padding-bottom:30px;
 }
 .company-contact dl{
 	padding-top:25px;
+	
 }
+
 .company-contact dt{
 	font-weight:bold;
 	color:#000;
@@ -170,3 +173,4 @@ html, body {
     color: #888;
     font-weight: 300;
 }
+

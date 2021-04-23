@@ -21,13 +21,15 @@ function noAgree(){
 <title>Insert title here</title>
 </head>
 <body>
-<header class="header"><jsp:include page="../include/nav.jsp" /></header>
 
-<form action="register" name="form" method="post">
-<div align="center" class="div">
+
+<div class="header"><jsp:include page="../include/nav.jsp" /></div>
+
+<div class="main">
 <p class="ptitle">The White Hotel 회원가입 약관동의</p>	
-	<div>
-		<h4 class="titlel">■ 포털 사이트 이용약관에 대한 안내</h4>	
+<form action="register" name="form" method="post">
+		
+		<p class="p">■ 포털 사이트 이용약관에 대한 안내</p>	
 		<div class="text">
 		<br>제 1장 총칙<br>
 		
@@ -63,14 +65,15 @@ function noAgree(){
 		&nbsp;&nbsp;&nbsp;4) 이용하여 법령과 본 약관이 금지하는 행위를 하는 경우<br>
 		&nbsp;&nbsp;&nbsp;5) 기타 정한 이용신청요건이 미비 되었을 때<br>
    		</div><br>
-   		<input type="checkbox" class="checkbox" name="req"> 이용약관에 동의합니다.(필수)
+   		<input type="checkbox" class="checkbox" name="req"> (필수) 이용약관에 동의합니다.
    		<hr class="hr">
-   		<h4 class="titlel">■ 개인정보 수집 및 이용에 대한 안내</h4>
+   		
+   		<p class="p">■ 개인정보 수집 및 이용에 대한 안내</p>
    		<div class="text">
    		<b>가. 개인정보의 수집 및 이용 목적</b><br>
-		① 다음의 목적을 위하여 개인정보를 처리합니다. 처리하고 있는 개인정보는 다음의 목적 이외의 용도로는 이용되지 않으며, 이용 목적이 변경되는 경우에는 개인정보 보호법 제18조에 따라 별도의 동의를 받는 등 필요한 조치를 이행할 예정입니다.<br>
+		① 다음의 목적을 위하여 개인정보를 처리합니다. 처리하고 있는 개인정보는 다음의 목적 이외의 용도로는 이용되지 않으며, 이용 목적이 변경되는 경우에는 개인정보 보호법 제18조에 따라 별도의 동의를 받는 등 필요한 조치를 이행할 예정입니다.<br><br>
 		<b style="font-size: 17px; color: #007dcd;">1. 서비스 제공을 위한 회원관리</b><br>
-		<b style="font-size: 17px; color: #007dcd;">1) 공간정보 다운로드, 오픈API 신청 및 활용 등 포털 서비스 제공과 서비스 부정이용 방지를 목적으로 개인정보를 <br>&nbsp;&nbsp;&nbsp;처리합니다.</b><br>
+		<b style="font-size: 17px; color: #007dcd;">1) 공간정보 다운로드, 오픈API 신청 및 활용 등 포털 서비스 제공과 서비스 부정이용 방지를 목적으로 개인정보를 처리합니다.</b><br>
 		
 		<br><b>나. 수집하는 개인정보의 항목</b><br>
 		<b style="font-size: 14px; color: #007dcd;">① 회원정보(필수): 이름, 이메일(아이디), 비밀번호</b><br>
@@ -85,19 +88,17 @@ function noAgree(){
 		<br><b>라. 동의 거부 권리 및 동의 거부에 따른 불이익 </b><br>
 		위 개인정보의 수집 및 이용에 대한 동의를 거부할 수 있으나, 동의를 거부할 경우 회원 가입이 제한됩니다.<br>
    		</div><br>
-   		<input type="checkbox" class="checkbox" name="req1"> 개인정보 수집ㆍ이용에 동의합니다.(필수)
+   		<input type="checkbox" class="checkbox" name="req1"> (필수) 개인정보 수집ㆍ이용에 동의합니다.
    		<hr class="hr">
-	</div>
-	
-<table>
-	<tr><td align="center" valign="top">
-    <button type="button" class="button" onclick="Agree()">동의</button>&nbsp;&nbsp;&nbsp;
-    <button type="button" class="button" onclick="noAgree()">동의 안 함</button>    
-   </td></tr>
-</table>
+		
+		
+    		<button type="button" class="button" onclick="Agree()">동의</button>
+    		<button type="button" class="button" onclick="noAgree()">동의 안 함</button>    
+   		
+	</form>
 </div>
-</form>
+	
+<div class="footer"><%@include file="../include/footer.jsp" %></div>
 
-<footer class="footer"><%@include file="../include/footer.jsp" %></footer>
 </body>
 </html>

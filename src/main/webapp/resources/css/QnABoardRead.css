@@ -53,7 +53,8 @@ table {
 /*==================================================================*/
 
 html, body {
-    min-width: 320px;
+    width:1920px;
+	heigth:1080px;
     letter-spacing: 0px;
     font-family: 맑은고딕, "malgun gothic", 돋움, Dotum, "Apple SD Gothic Neo", Helvetica, sans-serif;
    
@@ -61,6 +62,7 @@ html, body {
 
 
 .container{
+	width:100%;
 	display: flex;
 	justifiy-content: center;
 	flex-direction: column;
