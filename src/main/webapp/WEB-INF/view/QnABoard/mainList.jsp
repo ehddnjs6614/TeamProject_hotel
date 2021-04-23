@@ -9,7 +9,7 @@
 </head>
 <jsp:include page="../include/nav.jsp" />
 <div class="QnABoard">
-	<img src="${pageContext.request.contextPath}/resources/image/bg.jpg">
+	<img src="${pageContext.request.contextPath}/resources/image/hotelqna.jpg">
 	<h2>Q & A 게 시 판</h2>
 	<table>
 	<tr>
