@@ -21,6 +21,7 @@
 			<param-name>contextConfigLocation</param-name>
 		<!-- 컨테이너 생성 부분-->
 			<param-value>
+			config.ReservationConfig
 			config.DBconfig
 			config.LoginConfig
 			config.MvcConfig

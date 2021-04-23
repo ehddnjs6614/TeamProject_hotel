@@ -23,6 +23,7 @@ public class RegisterController {
 	public RegisterController(RegisterDao registerDao) {
 		this.registerDao = registerDao;
 	}
+	
 	//약관동의
 	@RequestMapping("/registerAgree")
 	public String registerAgree() {		
@@ -34,6 +35,8 @@ public class RegisterController {
 	public String register() {		
 		return "register/register";	
 	}
+	
+	
 		
 	/**
 	 * 

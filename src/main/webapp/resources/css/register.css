@@ -118,18 +118,13 @@ html, body {
 
 /*========헤더, 메인, 푸터 영역 지정==========*/
 .header {
-	background: #ffffff;
+	
 	border-bottom: 1px solid #eee;
     }
 
 .main {
 	margin-top:60px;
 	margin-bottom:100px;
-	background: #ffffff;
+	
 	}
 
-.footer {
-	background: #ffffff;
-	height: 310px;
-    }
- 

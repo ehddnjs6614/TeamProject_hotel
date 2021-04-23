@@ -21,9 +21,4 @@ public class MvcConfig implements WebMvcConfigurer {
 		registry.jsp("/WEB-INF/view/", ".jsp");
 	}
 
-	//@Override
-	//public void addViewControllers(ViewControllerRegistry registry) {
-	//	registry.addViewController("/register").setViewName("register");
-	//}
-
 }
