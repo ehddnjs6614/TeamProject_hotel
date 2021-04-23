@@ -26,7 +26,7 @@ function noAgree(){
 <div class="header"><jsp:include page="../include/nav.jsp" /></div>
 
 <div class="main">
-<p class="ptitle">The White Hotel 회원가입 약관동의</p>	
+<h1 class="ptitle">The White Hotel 회원가입 약관동의</h1>	
 <form action="register" name="form" method="post">
 		
 		<p class="p">■ 포털 사이트 이용약관에 대한 안내</p>	
