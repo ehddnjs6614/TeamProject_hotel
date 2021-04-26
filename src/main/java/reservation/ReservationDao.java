@@ -11,11 +11,18 @@ private JdbcTemplate jdbcTemplate;
 		this.jdbcTemplate = new JdbcTemplate(dataSource);
 	}
 	
-	//회원가입
+	//로그인정보가져오기
+	
+	//예약하기
 	public void reservationInsert(ReservationVO vo) {
-		String sql = "insert into ROOM values(?)";						
+		String sql = "insert into RESERVATION values(?)";						
 		this.jdbcTemplate.update(sql, 
-				vo.getRoom());		//1 
+				vo.getRuserName(),
+				vo.getRuserPhone(),
+				vo.getRuserCount(),
+				vo.getRuserDate(),
+				vo.getRuserRoom(),
+				vo.getRuserPhone());
 	}
 				
 }
