@@ -27,7 +27,72 @@ jQuery(document).ready(function( $ ){
 	});
 </script>
 
-
+<!-- 빈칸 입력 알림 -->
+<script type="text/javascript">
+	function goPost() {
+		// 1. 데이터 세팅
+		var ruserName = document.getElementsByName('ruserName')[0].value;
+		var ruserPhone = document.getElementsByName('ruserPhone')[0].value;
+		var ruserCount = document.getElementsByName('ruserCount')[0].value;
+		var checkIn = document.getElementsByName('checkIn')[0].value;
+		var checkOut = document.getElementsByName('checkOut')[0].value;
+		var roomType = document.getElementsByName('roomType')[0].value;
+		var ruserPrice = document.getElementsByName('ruserPrice')[0].value;
+		
+		// 2. 데이터 검증
+		if (ruserName == "") {
+			alert("예약자 이름을 입력하여 주세요.");
+			return;
+		}
+		else if (ruserPhone == "") {  
+			alert("예약자 연락처를 입력하여 주세요.");
+			return;
+		}
+		else if (ruserCount == ''){
+			alert("인원 수를 입력하여 주세요.");
+			return;
+		}
+		else if (checkIn == ''){
+			alert("체크인 날짜를 입력하여 주세요.");
+			return;
+		}
+		else if (checkOut == ''){
+			alert("체크아웃 날짜를 입력하여 주세요.");
+			return;
+		}
+		
+			
+		// 3. Form 연결
+		
+		var form = document.createElement("form");
+		form.setAttribute("charset", "UTF-8");
+		form.setAttribute("method", "Post");
+		form.setAttribute("action", "test");
+		
+		
+		formInput(form, "ruserName", ruserName);
+		formInput(form, "ruserPhone", ruserPhone);
+		formInput(form, "ruserCount", ruserCount);
+		formInput(form, "checkIn", checkIn);
+		formInput(form, "checkOut", checkOut);
+		formInput(form, "userEmail", userEmail);
+		formInput(form, "roomType", roomType);
+		formInput(form, "ruserPrice", ruserPrice); 
+		
+		// 4. 전송
+		document.body.appendChild(form);
+		form.submit();
+	}
+	
+	//자바스크립트 폼에 값입력
+	function formInput(form, name, value) {
+		var hiddenField = document.createElement("input");
+		hiddenField.setAttribute("type", "hidden");
+		hiddenField.setAttribute("name", name);
+		hiddenField.setAttribute("value", value);
+		form.appendChild(hiddenField);
+	}
+</script>
 
 <!-- css -->
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/reservation.css">
@@ -35,19 +100,11 @@ jQuery(document).ready(function( $ ){
 <title>Insert title here</title>
 </head>
 <body>
-<div class="header"><jsp:include page="../include/nav.jsp" /></div>
-
-
+<div class="header"><%@include file="../include/nav.jsp" %></div>
 
 <hr class="hr">
 <div class="item1">	
-	<div class="item1_1">
-		<select class="select">
-			<option>스탠다드룸</option>
-			<option>디럭스룸</option>
-			<option>스위트룸</option>
-			<option>프레스티지룸</option>
-		</select>		
+	<div class="item1_1">	
   		<div id="myCarousel" class="carousel slide" data-ride="carousel">
     		<!-- Indicators -->
     		<ol class="carousel-indicators">
@@ -58,13 +115,13 @@ jQuery(document).ready(function( $ ){
     	<!-- Wrapper for slides -->
     	<div class="carousel-inner">
       		<div class="item active">
-        	<img src="${pageContext.request.contextPath}/resources/image/hotelqna.jpg" alt="Los Angeles" style="width:100%;">
+        	<img src="${pageContext.request.contextPath}/resources/image/hotelqna.jpg" alt="Los Angeles">
       		</div>
       		<div class="item">
-        	<img src="${pageContext.request.contextPath}/resources/image/hotelqna.jpg" alt="Chicago" style="width:100%;">
+        	<img src="${pageContext.request.contextPath}/resources/image/hotelqna.jpg" alt="Chicago">
       		</div>    
       		<div class="item">
-        	<img src="${pageContext.request.contextPath}/resources/image/hotelqna.jpg" alt="New york" style="width:100%;">
+        	<img src="${pageContext.request.contextPath}/resources/image/hotelqna.jpg" alt="New york">
       		</div>
     	</div>
    	 	<!-- Left and right controls -->
@@ -77,24 +134,54 @@ jQuery(document).ready(function( $ ){
       		<span class="sr-only">Next</span>
     	</a>
 	  	</div>
-	</div>
+	  	
+	  	<div align="center">
+	  	<table class="type">
+  		<thead>
+  		<tr>
+   		 <th>객실정보</th>
+   		 <th>객실가격</th>
+  		</tr>
+  		</thead>
+  		<tbody>
+  		<tr>
+   		 <th scope="row">스탠다드</th>
+   		 <td>100,000원</td>
+  		</tr>
+  		<tr>
+   		 <th scope="row">디럭스</th>
+   		 <td>200,000원</td>
+ 		 </tr>
+  		<tr>
+   		 <th scope="row">스위트</th>
+   		 <td>500,000원</td>
+ 		 </tr>
+ 		 <tr>
+   		 <th scope="row">프레스티지</th>
+   		 <td>1,000,000원</td>
+  		</tr>
+ 		 </tbody>
+		</table>
+		</div>
+		</div>
 
 		<div class="item1_2">
 			<input type="text" name="ruserName" class="input" placeholder="예약자 이름"><br>
 			<input type="text" name="ruserPhone" class="input" placeholder="예약자 연락처"><br>
-			<input type="text" name="ruserCount" class="input" placeholder="인원수 (숫자만 입력)">
-			<input type="text" class="input" id="datepicker1" placeholder="예약 시작일">
-		 	<input type="text" class="input" id="datepicker2" placeholder="예약 종료일"><br>
-			<input type="text" class="input" placeholder="총 결제 금액"><br>
+			<input type="text" name="ruserCount" class="input" placeholder="인원 수"><br>
+			<input type="text" name="checkIn" class="input" id="datepicker1" placeholder="예약 시작일"><br>
+		 	<input type="text" name="checkOut" class="input" id="datepicker2" placeholder="예약 종료일"><br>
+		 	<input type="text" name="roomType" class="input" placeholder="객실 타입"><br>
+			<input type="text" name="ruserPrice"class="input" placeholder="총 결제 금액"><br>
 		</div>
+		</div>		
+		<div class="item3">
+		<input type="submit" value="예약하기" class="button" onClick="goPost()">
 		</div>
-		
 		
 		<hr class="hr">	
 		
-	<div class="item3">
-		<input type="submit" value="예약하기" class="button" onClick="goPost()">
-	</div>
+	
 	
 
 <div><%@include file="../include/footer.jsp" %></div>

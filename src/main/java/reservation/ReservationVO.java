@@ -1,19 +1,24 @@
 package reservation;
-  
+
+import java.sql.Timestamp;
+
 public class ReservationVO { 
 	private String ruserName;
 	private String ruserPhone;
 	private int ruserCount;
-	private String ruserDate;
-	private String ruserRoom;
+	private Timestamp checkIn;
+	private Timestamp checkOut;	
+	private String roomType;
 	private int ruserPrice;
 	
-	public ReservationVO(String ruserName, String ruserPhone, int ruserCount, String ruserDate, String ruserRoom, int ruserPrice) {
+	public ReservationVO(String ruserName, String ruserPhone, int ruserCount, Timestamp checkIn, 
+			Timestamp checkOut, String roomType, int ruserPrice) {
 		this.ruserName = ruserName;
 		this.ruserPhone = ruserPhone;
 		this.ruserCount = ruserCount;
-		this.ruserDate = ruserDate;
-		this.ruserRoom = ruserRoom;
+		this.checkIn = checkIn;
+		this.checkOut = checkOut;
+		this.roomType = roomType;
 		this.ruserPrice = ruserPrice;
 	}
 
@@ -41,20 +46,28 @@ public class ReservationVO {
 		this.ruserCount = ruserCount;
 	}
 
-	public String getRuserDate() {
-		return ruserDate;
+	public Timestamp getCheckIn() {
+		return checkIn;
 	}
 
-	public void setRuserDate(String ruserDate) {
-		this.ruserDate = ruserDate;
+	public void setCheckIn(Timestamp checkIn) {
+		this.checkIn = checkIn;
 	}
 
-	public String getRuserRoom() {
-		return ruserRoom;
+	public Timestamp getCheckOut() {
+		return checkOut;
 	}
 
-	public void setRuserRoom(String ruserRoom) {
-		this.ruserRoom = ruserRoom;
+	public void setCheckOut(Timestamp checkOut) {
+		this.checkOut = checkOut;
+	}
+
+	public String getRoomType() {
+		return roomType;
+	}
+
+	public void setRoomType(String roomType) {
+		this.roomType = roomType;
 	}
 
 	public int getRuserPrice() {

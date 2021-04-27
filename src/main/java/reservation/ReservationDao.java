@@ -15,14 +15,17 @@ private JdbcTemplate jdbcTemplate;
 	
 	//예약하기
 	public void reservationInsert(ReservationVO vo) {
-		String sql = "insert into RESERVATION values(?)";						
+		String sql = "insert into RESERVATION values(?,?,?,?,?,?,?)";						
 		this.jdbcTemplate.update(sql, 
 				vo.getRuserName(),
 				vo.getRuserPhone(),
 				vo.getRuserCount(),
-				vo.getRuserDate(),
-				vo.getRuserRoom(),
-				vo.getRuserPhone());
+				vo.getCheckIn(),
+				vo.getCheckOut(),
+				vo.getRoomType(),
+				vo.getRuserPrice());
+		}
+		else if
 	}
 				
 }
