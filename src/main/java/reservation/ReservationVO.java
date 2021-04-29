@@ -1,18 +1,19 @@
 package reservation;
 
-import java.sql.Timestamp;
+import java.util.Date;
 
 public class ReservationVO { 
+	
 	private String ruserName;
 	private String ruserPhone;
 	private int ruserCount;
-	private Timestamp checkIn;
-	private Timestamp checkOut;	
+	private Date checkIn;
+	private Date checkOut;	
 	private String roomType;
 	private int ruserPrice;
 	
-	public ReservationVO(String ruserName, String ruserPhone, int ruserCount, Timestamp checkIn, 
-			Timestamp checkOut, String roomType, int ruserPrice) {
+	public ReservationVO(String ruserName, String ruserPhone, int ruserCount, Date checkIn, 
+			Date checkOut, String roomType, int ruserPrice) {
 		this.ruserName = ruserName;
 		this.ruserPhone = ruserPhone;
 		this.ruserCount = ruserCount;
@@ -46,19 +47,19 @@ public class ReservationVO {
 		this.ruserCount = ruserCount;
 	}
 
-	public Timestamp getCheckIn() {
+	public Date getCheckIn() {
 		return checkIn;
 	}
 
-	public void setCheckIn(Timestamp checkIn) {
+	public void setCheckIn(Date checkIn) {
 		this.checkIn = checkIn;
 	}
 
-	public Timestamp getCheckOut() {
+	public Date getCheckOut() {
 		return checkOut;
 	}
 
-	public void setCheckOut(Timestamp checkOut) {
+	public void setCheckOut(Date checkOut) {
 		this.checkOut = checkOut;
 	}
 

@@ -32,8 +32,8 @@ ALTER TABLE RESERVATION ADD FOREIGN KEY(RUSERID) REFERENCES REGISTER_USER(userid
 
 예약기간 중복체크하기 예제
 INSERT INTO TEST VALUES('2021-01-01', '2021-01-05');
-SELECT count(*) FROM RESERVATION WHERE checkin <= '2021-01-10' AND checkout <= '2021-01-03';
-카운트가 0일때 예약기간중복, 1일때 예약가능
+SELECT count(*) FROM RESERVATION WHERE checkin <= '2021-01-06' AND checkout >= '2021-01-03';
+카운트가 0일때 예약가능, 1이상일때 예약불가능
 -----------------------------------------------------------------------------------------------
 
 객실 테이블
@@ -75,3 +75,5 @@ CHECKOUT DATE NOT NULL);
 ******예약기간 중복체크하기*******
 INSERT INTO TEST VALUES('2021-01-01', '2021-01-05');
 SELECT count(*) FROM TEST WHERE checkout >= '2021-01-03' AND checkin <= '2021-02-01';
+
+commit;

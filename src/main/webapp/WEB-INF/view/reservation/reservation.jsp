@@ -29,15 +29,14 @@ jQuery(document).ready(function( $ ){
 
 <!-- 빈칸 입력 알림 -->
 <script type="text/javascript">
-	function goPost() {
+	function goPost1() {
 		// 1. 데이터 세팅
 		var ruserName = document.getElementsByName('ruserName')[0].value;
 		var ruserPhone = document.getElementsByName('ruserPhone')[0].value;
 		var ruserCount = document.getElementsByName('ruserCount')[0].value;
 		var checkIn = document.getElementsByName('checkIn')[0].value;
 		var checkOut = document.getElementsByName('checkOut')[0].value;
-		var roomType = document.getElementsByName('roomType')[0].value;
-		var ruserPrice = document.getElementsByName('ruserPrice')[0].value;
+		
 		
 		// 2. 데이터 검증
 		if (ruserName == "") {
@@ -75,9 +74,8 @@ jQuery(document).ready(function( $ ){
 		formInput(form, "ruserCount", ruserCount);
 		formInput(form, "checkIn", checkIn);
 		formInput(form, "checkOut", checkOut);
-		formInput(form, "userEmail", userEmail);
-		formInput(form, "roomType", roomType);
-		formInput(form, "ruserPrice", ruserPrice); 
+		formInput(form, "roomType", "스탠다드");
+		formInput(form, "ruserPrice", "100000"); 
 		
 		// 4. 전송
 		document.body.appendChild(form);
@@ -171,12 +169,11 @@ jQuery(document).ready(function( $ ){
 			<input type="text" name="ruserCount" class="input" placeholder="인원 수"><br>
 			<input type="text" name="checkIn" class="input" id="datepicker1" placeholder="예약 시작일"><br>
 		 	<input type="text" name="checkOut" class="input" id="datepicker2" placeholder="예약 종료일"><br>
-		 	<input type="text" name="roomType" class="input" placeholder="객실 타입"><br>
-			<input type="text" name="ruserPrice"class="input" placeholder="총 결제 금액"><br>
+		 	
 		</div>
 		</div>		
 		<div class="item3">
-		<input type="submit" value="예약하기" class="button" onClick="goPost()">
+		<input type="submit" value="예약하기" class="button" onClick="goPost1()">
 		</div>
 		
 		<hr class="hr">	
